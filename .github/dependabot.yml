@@ -1,0 +1,61 @@
+version: 2
+updates:
+  # Ruby dependencies
+  - package-ecosystem: "bundler"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "09:00"
+      timezone: "UTC"
+    open-pull-requests-limit: 10
+    reviewers:
+      - "security-team"
+    assignees:
+      - "security-team"
+    commit-message:
+      prefix: "security"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "security"
+    groups:
+      security-updates:
+        patterns:
+          - "*"
+        update-types:
+          - "security"
+      nokogiri-updates:
+        patterns:
+          - "nokogiri"
+        update-types:
+          - "version-update:semver-major"
+          - "version-update:semver-minor"
+          - "version-update:semver-patch"
+      rails-updates:
+        patterns:
+          - "rails"
+          - "actionpack"
+          - "actionview"
+          - "activerecord"
+          - "activesupport"
+        update-types:
+          - "version-update:semver-major"
+          - "version-update:semver-minor"
+          - "version-update:semver-patch"
+    ignore:
+      # Ignore major version updates for Rails to prevent breaking changes
+      - dependency-name: "rails"
+        update-types: ["version-update:semver-major"]
+      # Ignore Ruby version updates
+      - dependency-name: "ruby"
+        update-types: ["version-update:semver-major"]
+    # Auto-merge for patch updates
+    auto-merge:
+      enabled: true
+      schedule: "weekly"
+      time: "09:00"
+      timezone: "UTC"
+    # Ignore specific vulnerabilities (if needed)
+    # ignore:
+    #   - dependency-name: "some-package"
+    #     update-types: ["security"]
