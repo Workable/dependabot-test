@@ -8,8 +8,8 @@ gem "sqlite3", "~> 1.4"
 gem "puma", "~> 6.0"
 gem "bootsnap", ">= 1.4.4", require: false
 
-# Secure version - fixes all security vulnerabilities
-gem "nokogiri", "~> 1.18.9"  # Latest secure version
+# Vulnerable dependency to trigger Dependabot alerts
+gem "nokogiri", "~> 1.15.0"  # Vulnerable version with known CVEs
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
