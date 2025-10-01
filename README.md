@@ -26,3 +26,5 @@ This is a simple Rails application created for testing Dependabot functionality.
 
 - `/` - Root path showing hello world
 - `/hello` - Alternative hello world path
+
+Change
