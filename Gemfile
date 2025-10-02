@@ -4,12 +4,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.2.2"
 
 gem "rails", "~> 7.1.0"
-gem "sqlite3", "~> 1.4"
+gem "sqlite3", "~> 1.4" # Revert to working version
 gem "puma", "~> 6.0"
 gem "bootsnap", ">= 1.4.4", require: false
 
-# Secure nokogiri version
-gem "nokogiri", "~> 1.18.0" # Updated to secure version
+# Vulnerable dependencies for testing
+gem "nokogiri", "~> 1.14.0" # Vulnerable version with known CVEs
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
