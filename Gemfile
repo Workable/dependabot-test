@@ -9,7 +9,7 @@ gem "puma", "~> 6.0"
 gem "bootsnap", ">= 1.4.4", require: false
 
 # Secure nokogiri version
-gem "nokogiri", "~> 1.18.0" # Updated to secure version
+gem "nokogiri", "1.18.9" # Updated to specific secure version
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
