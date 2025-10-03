@@ -8,8 +8,8 @@ gem "sqlite3", "~> 1.4" # Revert to working version
 gem "puma", "~> 6.0"
 gem "bootsnap", ">= 1.4.4", require: false
 
-# Vulnerable dependencies for testing
-gem "nokogiri", "~> 1.14.0" # Vulnerable version with known CVEs
+# Secure nokogiri version
+gem "nokogiri", "1.18.10" # Updated to secure version
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
