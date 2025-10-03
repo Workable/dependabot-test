@@ -5,7 +5,7 @@ ruby "3.2.2"
 
 gem "rails", "~> 7.1.0"
 gem "sqlite3", "~> 1.4" # Revert to working version
-gem "puma", "~> 6.0"
+gem "puma", "~> 7.0"
 gem "bootsnap", ">= 1.4.4", require: false
 
 # Secure nokogiri version
